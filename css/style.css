@@ -1,0 +1,55 @@
+/*fontawesome cdn link*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+/*google font cdn link*/
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Bebas+Neue&family=Big+Shoulders:opsz,wght@10..72,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fascinate+Inline&family=Lexend+Deca:wght@100..900&family=Monoton&family=Noto+Kufi+Arabic&family=Onest:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&family=Ubuntu&family=Young+Serif&display=swap');
+:root{
+    --main-color: #ffdd95;
+    --black: #222;
+    --light-black:#1a1a1a;
+    --bg-color:#0d0d0d;
+    --white: #fff;
+    --light-white: #aaa;
+}
+*{
+    box-sizing: border-box;
+    padding: 0; margin: 0;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+    transition: 0.2s all linear;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    font-size: 62.5%;          /* يسهل استخدام rem (1rem = 10px)*/
+    scroll-padding-top: 7rem;  /* يسيب فراغ علوي عند التمرير التلقائي */
+    scroll-behavior: smooth;  /*بيخلي التمرير ناعم */
+    overflow-x: hidden;        /*يمنع التمرير الافقي */
+}
+
+/*الكود ده بيخصص شكل شريط التمرير كالتالي:
+
+العرض كبير (8rem).
+
+الزر المتحرك لونه بيتحدد بناءً على متغير CSS.
+
+خلفية المسار شفافة أو غير موجودة.
+
+*/
+
+ ::-webkit-scrollbar{
+    width: 8rem;  /*1rem=10px*/
+ }
+
+ ::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+ }
+
+ ::-webkit-scrollbar-track{
+    background-color: none;
+ }
+
+body{
+    background-color: var(--bg-color);
+}
+
+
