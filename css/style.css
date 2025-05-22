@@ -51,5 +51,129 @@ html {
 body{
     background-color: var(--bg-color);
 }
+section{
+   padding: 2rem;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.header{
+   position: sticky; top: 0; right: 0;left:0;
+   z-index: 1000;
+}
+.header .flex{
+   display: flex;
+   align-items: center;
+}
+#menu-btn{
+   font-size: 2.5rem;
+   color: var(--white);
+   margin-right: 1rem;
+   cursor: pointer;
+}
+.header .flex .logo{
+   margin-right: auto;
+}
+.header .flex .logo a{
+   font-size: 2.5rem;
+   color: var(--white);
+   font-weight: bold ;
+   font-style: italic;
+}
+
+.header .flex .search-form{
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.header .flex .search-form .search-bar{
+   background-color: var(--light-black);
+   border-radius: 0.5rem;
+   padding: 1rem 1.5rem;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   width: 50rem;
+
+}
+.header .flex .search-form .search-bar input{
+   width: 100%;
+   background: none;
+   font-size: 1.8rem;
+   color: var(--white);
+}
+
+ .header .flex .search-form .search-bar 
+input::-webkit-search-cancel-button{
+   appearance: none;
+}
+    
+ .header .flex .search-form .search-bar label{
+   color: var(--white);
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+.header .flex .search-form  a{
+
+   display: block;
+   text-align: center;
+   font-size: 2rem;
+   height: 4rem;
+   width: 4.5rem;
+   line-height: 4rem;
+   border-radius: 0.5rem;
+   color: var(--white);
+   background-color: var(--light-black);
+ 
+}
+
+.header .flex .search-form  a:hover{
+   background-color: var(--main-color);
+   color: var(--black);
+}
+.header .flex .search-form .search-bar label:hover{
+   color: var(--main-color);
+}
+.btn{
+   display: inline-block;
+   padding: 0.6rem 1.6rem;
+   font-size: 1.6rem;
+   color: var(--black);
+   background-color: var(--main-color);
+   border-radius: 0.5rem;
+   cursor: pointer;
+}
+.btn:hover{
+   background-color: var(--white);
+   
+}
+.btn i{
+   margin-right: 0.5rem;
+}
+
+.header .btn{
+   margin-left: auto;
+}
+
+#search-toggler{
+   height: 3.5rem;
+   width: 4.5rem;
+   line-height: 3.5rem;
+   font-size: 2rem;
+   color: var(--white);
+   background-color: var(--light-black);
+   border-radius: 0.5rem;
+   margin-left: 1rem;
+   text-align: center;
+   display: none;
+   cursor: pointer;
+}
+
+
+
+  
+
 
 
