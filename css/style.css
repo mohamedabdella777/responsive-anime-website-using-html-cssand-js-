@@ -1,3 +1,4 @@
+
 /*fontawesome cdn link*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 /*google font cdn link*/
@@ -37,7 +38,7 @@ html {
 */
 
  ::-webkit-scrollbar{
-    width: 8rem;  /*1rem=10px*/
+    width: 0.5rem;  /*1rem=10px*/
  }
 
  ::-webkit-scrollbar-thumb{
@@ -61,18 +62,26 @@ section{
    position: sticky; top: 0; right: 0;left:0;
    z-index: 1000;
 }
+
+.header.active{
+   background-color: rgba(0,0,0,.8);
+   backdrop-filter: blur(4px);/* تُستخدم لتطبيق تأثير ضبابي (blur) على الخلفية الواقعة خلف عنصر معين.
+بمعنى آخر، أي شيء يظهر خلف هذا العنصر سيتم تعتيمه أو تشويشه بمقدار 4 بكسل. */ 
+}
+
 .header .flex{
    display: flex;
    align-items: center;
 }
 #menu-btn{
    font-size: 2.5rem;
-   color: var(--white);
+   color: var(--main-color);
    margin-right: 1rem;
    cursor: pointer;
 }
 .header .flex .logo{
    margin-right: auto;
+   
 }
 .header .flex .logo a{
    font-size: 2.5rem;
@@ -171,9 +180,160 @@ input::-webkit-search-cancel-button{
    cursor: pointer;
 }
 
-
-
+.side-bar{
+   position:fixed;
+   top: 0; left: 0; right: 0;
+   z-index: 1100;
+   background-color: rgba(0,0,0,.8);
+   backdrop-filter: blur(10px);
+   height: 100vh;
+   display: none;
+   
+}
+.side-bar.active{
+   display: block;
+}
   
+.side-bar .navbar {
+   height: 100%;
+   width: 35rem;
+   background-color: rgba(0,0,0,.8);
+   padding: 2rem;
+   overflow-y: scroll;
+   animation: slide-in .2s cubic-bezier(.32,.85,.21,1.26); /*slide-in: اسم الحركة (يجب تعريفها باستخدام @keyframes)
 
+.2s: مدة الحركة (0.2 ثانية = 200 مللي ثانية)
+
+cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثير قفز خفيف (حركة ديناميكية)
+
+ */
+
+}
+ @keyframes  slide-in{
+
+ from{
+   opacity: 0; /* العنصر غير مرئي في البداية.*/
+   transform:translateX(-10rem) /*العنصر يبدأ خارج الشاشة أو بعيدًا لليسار بمقدار 10rem. */
+ }
+ to{
+   opacity: 1; /*العنصر يصبح مرئيًا تمامًا. */
+   transform:translateX(0rem) /* العنصر يعود إلى موقعه الطبيعي. */
+ }
+   
+ }
+
+ .side-bar .navbar #close-btn{
+
+   margin-bottom: 1rem;
+   padding: 1rem 2rem;
+   border: .1rem solid #555;
+   border-radius: 5rem;
+   display: inline-block;
+   font-size: 1.8rem;
+   color: var(--white);
+   cursor: pointer;
+
+ }
+
+ .side-bar .navbar #close-btn:hover{
+   background-color: var(--white);
+   color: var(--black);
+ }
+.side-bar .navbar #close-btn i{
+   margin-right: .5rem;
+}
+.side-bar .navbar #close-btn:hover i{
+   margin-right: 1rem;
+}
+
+.side-bar .navbar a{
+   display:block ;
+   padding: 0.6rem 0;
+   font-size: 1.6rem;
+   color: var(--main-color)
+}
+
+  .side-bar .navbar a:hover{
+   color: var(--white);
+   
+  }
+
+.side-bar .navbar .title{
+   background-color: var(--light-black);
+   color: var(--white);
+   font-size: 2rem;
+   border-radius: .5rem;
+   padding: .8rem 0;
+   text-align: center;
+   margin: 1rem 0;
+
+}
+
+.side-bar .navbar .row{
+
+   column-count: 2;
+   column-gap: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*media queries */
+@media (max-width:991px){
+  #search-toggler{
+   display: inline-block;
+  }
+  .header .flex .search-form{
+   position: absolute;
+   top: calc(100% - .1rem); left:0; right:0;
+   background-color: var(--bg-color);
+   border-top: .1rem solid rgba(255, 255, 255,0.2 );
+   padding: 1.5rem;
+   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   
+  }
+  }
+
+ .header .flex .search-form .search-bar{
+   width: 100%;
+ }
+
+ 
+ .header .flex .search-form.active{
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ }
+
+
+@media (max-width:450px){
+   html{
+      font-size: 50%;
+   }
+}
 
 
