@@ -282,20 +282,92 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
 
 
 
+.footer{
+   background-color: var(--black);
+}
+
+.footer .list h3{
+   color: var(--white);
+   font-size: 3rem;
+}
+
+.footer .list p{
+
+   font-size: 1.4rem;
+   line-height: 1.6;
+   color: var(--light-white);
+   padding: 0.5rem 0;
+}
+.footer .list .list-links{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+   margin: 1rem 0;
+   padding-top: 1rem;
+   
+}
+.footer .list .list-links a{
+   padding: 0.5rem 1rem;
+   font: size 1.8rem;
+   color: var(--light-white);
+   background: var(--bg-color);
+   border-radius: 0.5rem;
+}
+
+.footer .list .list-links a:hover{
+ background-color: var(--main-color);
+ color: var(--black);
+}
+.footer .row{
+   display: flex;
+   justify-content: space-between;
+   padding: 1rem 0;
+   gap: 2rem;
+   line-height: 4rem;
+}
+
+.footer .row .extra-links a{
+   margin-right: 1.5rem;
+   font-size: 1.8rem;
+   color: var(--light-white);
+   
+}
+
+.footer .row .extra-links a:hover{
+   color: var(--white);
+}
+
+.footer .row  .share a{
+  font-size: 2rem;
+  height: 4rem;
+  width: 4.5rem;
+  line-height: 4rem;
+  border-radius: 0.5rem;
+  background-color: var(--light-black);
+  color: var(--light-white);
+  text-align: center;
+  margin-left: 0.5rem;
+}
 
 
+.footer .row  .share a:hover{
+   background-color: var(--main-color);
+   color: var(--black);
+}
 
+.footer .credit{
+   display: block;
+   text-align: center;
+   font-size: 2rem;
+   color: var(--light-white);
+   border-top: 0.1rem solid rgba(255, 255, 255,0.1 );
+   padding-top: 3rem;
+   margin-bottom: 1rem;
+}
 
-
-
-
-
-
-
-
-
-
-
+.footer .credit span{
+   color: var(--main-color);
+}
 
 
 
@@ -318,16 +390,35 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
    
   }
-  }
+  
+.header .flex .search-form.active{
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ }
 
  .header .flex .search-form .search-bar{
    width: 100%;
  }
 
- 
- .header .flex .search-form.active{
-   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ .footer .list{
+   text-align: center;
  }
+
+ .footer .list .list-links{
+   justify-content: center;
+ }
+
+ .footer .row{
+   flex-flow: column;
+   text-align: center;
+ }
+
+}
+
+ 
+
+
+
+
 
 
 @media (max-width:450px){
