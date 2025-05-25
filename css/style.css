@@ -370,9 +370,268 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
 }
 
 
+.hero .slide{
+
+   position: relative;
+   z-index: 0;
+   
+}
+
+.hero .slide::before{
+   position: absolute;
+   content: '';
+   top: 0; left: 0;right: 0; bottom: 0; /* inset:0; */
+   background: radial-gradient(circle at 100% 50%, transparent 30% , rgba(0, 0, 0,0.9) 60%) ;
+   /*خلفية فيها بقعة دائرية شفافة تبدأ من جهة اليمين، وتتحول تدريجيًا إلى الأسود الداكن باتجاه الداخل.*/
+   z-index: -1;
+}
+
+.hero .slide .content{
+    min-height: 100vh;
+   display: flex;
+   align-items: center;
+}
+.hero .slide .content span{
+   font-size: 2rem;
+   color: var(--main-color);
+   text-transform: uppercase;
+}
+.hero .slide .content h3{
+   margin-top: 0.5rem;
+   margin-bottom: 1.5rem;
+   font-size: clamp(2rem , 5rem, 7rem);/*
+ clamp(min, preferred, max)        
+  ✔ لا تحتاج إلى media queries.
+✔ الخط يبدو مناسبًا على جميع الأجهزة.   */
+
+   line-height: 1.2;
+    max-width: 50rem;
+    color: var(--white);
+
+}
+.hero .slide .content .flex{
+   display: flex;
+   gap: 1rem;
+}
+.hero .slide .content .flex p{
+   font-size: 1.8rem;
+   color: var(--light-white);
+
+}
+
+.hero .slide .content .flex p i{
+   padding-right: 0.8rem;
+   color: var(--white);
+}
+.hero .slide .content .buttons{
+
+   margin: 2rem 0;
+}
+
+.hero .slide .content .buttons a:last-child{
+   margin-left: 1.5rem;
+   color: var(--white);
+   font-size: 1.8rem;
+}
+.hero .slide .content .buttons a:last-child i{
+   margin-left: 0.5rem;
+}
+
+.hero .slide .content .buttons a:last-child:hover{
+   color: var(--main-color);
+}
+
+.hero .slide .content .description{
+   font-size: 1.8rem;
+   color: var(--light-white);
+   max-width: 50rem;
+}
 
 
 
+/*slider*/
+.hero .swiper-pagination-bullets{
+   bottom: 3rem;
+}
+
+.hero .swiper-pagination-bullet{
+   height: 1.5rem;
+   width: 1.5rem;
+   background-color: var(--white);
+   opacity: 0.5;
+   margin-bottom: 1rem;
+}
+
+.hero .swiper-pagination-bullet-active{
+   background-color: var(--main-color);
+   opacity: 1;
+}
+
+
+
+
+/*     نريد إضافة تدرجين (تأثير ظل ناعم) على يمين ويسار عنصر المنشورات لجعل الشكل أجمل، ويعطي إحساس أن هناك محتوى يتم تمريره أفقيًا.             */
+/*  الحاوية الرئيسية  */
+.trending .posts-container{
+   position: relative;
+   overflow-x: hidden;
+   height: auto;
+   
+}
+/*   التدرج من اليسار   */
+.trending .posts-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5rem; /* عرض التدرج */
+  background: linear-gradient(to right, rgba(13, 13, 13, 0.8), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/*  التدرج من اليمين: */
+.trending .posts-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5rem;
+  background: linear-gradient(to left, rgba(13, 13, 13, 0.8), transparent);
+  pointer-events: none; /* يعني إنهم ما يعيقوش الماوس أو اللمس. */
+  z-index: 2;
+}
+
+/*        ::before و ::after هما عنصران وهميان نضيفهما بدون HTML.
+
+كل واحد فيهم يغطي جانب من الحاوية.
+
+نستخدم linear-gradient علشان نعمل تدرج لوني من أسود شفاف إلى شفاف تمامًا.       */
+
+ 
+
+ .posts-container .post{
+   width: 20rem;
+}
+.posts-container .post{
+   user-select: none; /*  لاحظ ان القيمه ممكن تكون tex  auto allتمنع المستخدم من تظليل عنصر او نسخه  */
+}
+.posts-container .post .imge{
+   position: relative;
+   height: 30rem;
+   border-radius: 0.5rem;
+   overflow: hidden;
+}
+   img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+ }
+   
+.posts-container .post .imge::before{
+   content: "";
+   position: absolute;
+   inset: 0;
+  background: linear-gradient(rgba(13,13,13,0.8),transparent,rgba(13,13,13,0.8));
+}
+
+.posts-container .post .imge:hover::before{
+   opacity: 0;
+}
+
+.posts-container .post .imge .type{
+   position: absolute;
+   top: 0; left: 0;
+   background-color: var(--white);
+   color: var(--black);
+   border-top-left-radius: 0.1rem;
+   border-bottom-right-radius: 0.5rem;
+   font-size: 1.5rem;
+}
+.posts-container .post .imge .caption{
+    position: absolute;
+   bottom: 0; right: 0;
+   background-color: var(--main-color);
+   color: var(--black);
+   border-top-left-radius: 0.1rem;
+   border-bottom-right-radius: 0.5rem;
+   font-size: 1.5rem;
+}
+ 
+.posts-container .post h3{
+
+   margin: 1rem 0;
+   font-weight: normal;
+
+}
+.posts-container .post h3 a{
+   display: block;
+   width: 20rem;
+   color: var(--white);
+   font-size: 1.8rem;
+   overflow: hidden;/*يخفي النص الزائد خارج العنصر. */
+   text-overflow: ellipsis;/*يعرض ... بدلًا من الجزء المخفي من النص*/
+   white-space: nowrap; /* يمنع النص من الانتقال لسطر جديد.*/
+}
+
+.posts-container .post h3 a:hover{
+   color:var(--main-color)
+}
+
+.trending .heading{
+   font-size: 3rem;
+   margin-bottom: 2rem;
+   padding-bottom: 1.5rem;
+   border-bottom: 0.1rem solid rgba(255, 255, 255,0.2 ) ;
+   color: var(--main-color) ;
+}
+
+   /*latest */
+
+.latest .posts-container{
+   display: grid;/*مما يعني أن جميع العناصر بداخله سيتم ترتيبها وفق نظام شبكي (Grid layout). */
+   grid-template-columns: repeat(auto-fit, 20rem);/*سيضع أكبر عدد ممكن من الأعمدة بعرض 20rem داخل الصف الواحد، حسب حجم الشاشة أو الحاوية. */
+   align-items: flex-start;/*يجعل كل عنصر يبدأ من الأعلى (أي لا يتم تمديده لملء الارتفاع). */
+   justify-content: center;/*يتحكم في محاذاة الأعمدة داخل الحاوية أفقياً */
+}
+
+
+
+.latest .posts-container .info span{
+font-size: 1.6rem;
+color: var(--light-white);
+
+}
+
+.latest .posts-container .info span i{
+   margin-right: 0.5rem;
+}
+.latest .posts-container .info span :last-child{
+   margin-left: 1.5rem;
+}
+
+.latest .posts-container a{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+
+}
+.latest h1{
+   font-size: 3rem;
+   color: var(--main-color);
+   border-bottom: 0.1rem solid rgba(255, 255, 255,0.2 );
+   padding-bottom: 1rem;
+   padding-top: 3rem;
+   margin-bottom: 2rem;
+}
+ .button{
+   margin-top: 3rem;
+   margin-bottom: 1rem;
+   text-align: center;
+}
+ 
 
 
 
@@ -414,17 +673,19 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
 
 }
 
- 
-
-
-
-
-
 
 @media (max-width:450px){
    html{
       font-size: 50%;
    }
+   .hero .slide::before{
+      background: rgba(0,0,0,.9);
+   }
+     .hero .slide .content h3{
+           font-size: 4rem;
+     }
+    
+     
 }
 
 
