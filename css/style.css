@@ -29,13 +29,14 @@ html {
 
 /*الكود ده بيخصص شكل شريط التمرير كالتالي:
 
-العرض كبير (8rem).
+عرض الشريط التمر(0.5rem).
 
 الزر المتحرك لونه بيتحدد بناءً على متغير CSS.
 
 خلفية المسار شفافة أو غير موجودة.
 
 */
+/*لو عملت SCROLLده بيكون شكله*/
 
  ::-webkit-scrollbar{
     width: 0.5rem;  /*1rem=10px*/
@@ -49,6 +50,8 @@ html {
     background-color: none;
  }
 
+
+ /*STEP1*/
 body{
     background-color: var(--bg-color);
 }
@@ -56,6 +59,7 @@ section{
    padding: 2rem;
    margin: 0 auto;
    max-width: 1200px;
+   
 }
 
 .header{
@@ -180,6 +184,9 @@ input::-webkit-search-cancel-button{
    cursor: pointer;
 }
 
+
+/*STEP3*/
+
 .side-bar{
    position:fixed;
    top: 0; left: 0; right: 0;
@@ -275,12 +282,7 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
    column-gap: 2rem;
 }
 
-
-
-
-
-
-
+/*STEP2*/
 
 .footer{
    background-color: var(--black);
@@ -369,6 +371,7 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
    color: var(--main-color);
 }
 
+/*STEP4*/
 
 .hero .slide{
 
@@ -381,7 +384,7 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
    position: absolute;
    content: '';
    top: 0; left: 0;right: 0; bottom: 0; /* inset:0; */
-   background: radial-gradient(circle at 100% 50%, transparent 30% , rgba(0, 0, 0,0.9) 60%) ;
+    background: radial-gradient(circle at right center, transparent 30% , rgba(0, 0, 0,0.9) 60%) ;
    /*خلفية فيها بقعة دائرية شفافة تبدأ من جهة اليمين، وتتحول تدريجيًا إلى الأسود الداكن باتجاه الداخل.*/
    z-index: -1;
 }
@@ -449,7 +452,7 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
 
 
 
-/*slider*/
+/*slider*/ /*هذا الجزء خاص بتنسيق شريط التمرير*/
 .hero .swiper-pagination-bullets{
    bottom: 3rem;
 }
@@ -468,6 +471,7 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
 }
 
 
+/*step 4*/
 
 
 /*     نريد إضافة تدرجين (تأثير ظل ناعم) على يمين ويسار عنصر المنشورات لجعل الشكل أجمل، ويعطي إحساس أن هناك محتوى يتم تمريره أفقيًا.             */
@@ -580,6 +584,8 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
    color:var(--main-color)
 }
 
+
+
 .trending .heading{
    font-size: 3rem;
    margin-bottom: 2rem;
@@ -588,7 +594,7 @@ cubic-bezier(.32,.85,.21,1.26): دالة توقيت مخصصة تعطي تأثي
    color: var(--main-color) ;
 }
 
-   /*latest */
+   /*latest */ /*step5*/
 
 .latest .posts-container{
    display: grid;/*مما يعني أن جميع العناصر بداخله سيتم ترتيبها وفق نظام شبكي (Grid layout). */
@@ -632,10 +638,146 @@ color: var(--light-white);
    text-align: center;
 }
  
+/* filter.html */
+
+.filter form {
+   background-color: var(--black);
+   border-radius: 0.5rem;
+   padding: 1.5rem;
+}
+
+
+.filter form .list-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter form .list-container .list{
+   display: flex;
+   flex: 1 1 25rem;/*flex-grow: 1;flex-shrink: 1;flex-basis: 25rem;
+*/
+   padding: 1rem 1.5rem;
+   position: relative;
+   background-color: var( --light-black);
+}
+
+.filter form .list-container .list span{
+   color: var(--light-white);
+   font-size: 1.8rem;
+}
+
+.filter form .list-container .list  .output{
+    color: var(--main-color);
+    padding: 0 1rem;
+    font-size: 2rem;
+    background: none;
+    width: 100%;
+}
+
+
+.filter form .list-container .list .items{
+      position: absolute;
+      top: 100%;/*   يعني أن الجزء العلوي من هذا العنصر سيتم وضعه أسفل العنصر الأب مباشرة.
+القيمة 100% تُشير إلى طول العنصر الأب بالكامل.
+مثال: إذا كان ارتفاع العنصر الأب 50px، فالعنصر هذا سيبدأ من 50px إلى الأسفل.   */
+      left: 0;
+      right: 0;
+      z-index: 10;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      background-color: var(--light-black);
+      padding: 0.5rem 1rem;
+      transform: scaleY(0);/* هذه الخاصية تقوم بتقليص ارتفاع العنصر (التحجيم عموديًا) إلى الصفر.*/
+      transform-origin: top;/* top تعني أن نقطة الأصل هي أعلى العنصر.أي أن التقليص أو التمدد سيبدأ من الأعلى باتجاه الأسفل.*/
+}
+
+.filter form .list-container .list .items .item{
+   cursor: pointer;
+   background-color: var(--black);
+   padding: 0.5rem 1rem;
+   font-size: 1.8rem;
+   color: var(--light-white);
+   margin: 0.5rem 0;
+   border-radius: 0.5rem;
+}
+
+.filter form .list-container .list .items .item:hover{
+   color: var(--main-color);
+   margin-left: 2rem;
+}
+
+
+.filter form .list-container .list .items .item:hover,
+ .filter form .list-container .list:hover .items,
+  .filter form .list-container .list .output:focus + .items ,
+   .filter form .list-container .list .output:focus-within + .items
+{
+    transform: scaleY(1);
+}
+
+.filter form .genere{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+
+.filter form .genere input{
+   display: none;
+}
+ .filter form .genere label{
+   font-size: 1.8rem;
+   color:var(--light-white);
+   background-color: var(--light-black);
+   border-radius: .5rem ;
+   padding: .5rem 1rem;
+   cursor: pointer;
+   user-select: none;
+}
+
+
+.filter form .genere input:checked + label,
+.filter form .genere label:hover
+{
+   background-color: var(--main-color);
+   color: var(--black);
+}
+
+.filter form .btn{
+   margin-top: 2rem;
+   margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /*media queries */
+
 @media (max-width:991px){
   #search-toggler{
    display: inline-block;

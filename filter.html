@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+
+    <!--swiper css cdn link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!--custom css file-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+<!--header section stars--><!--FIRST STEP-->
+<header class="header">
+<section class="flex">
+
+<div class="logo">
+      <div id="menu-btn" class="fas fa-bars-staggered"   ></div>
+     <a href="home.html">OUTAKU</a>
+</div>
+
+<div class="search-form">
+    <form action="" class="search-bar">
+      <input type="search" placeholder="search anime..." id="searchBox" maxlenght="100">
+      <label for="searchBox" class="fas fa-search"></label>
+    </form>
+      <a href="filter.html" class="fas fa-filter"></a>
+</div>
+
+<a href="login.html" class="btn"><i class="fas fa-user"></i>login</a>
+
+<div id="search-toggler" class="fas fa-search"></div>
+ 
+</section>
+</header>
+<!--header section ends-->
+
+<div class="side-bar"> <!--SECOND STEP-->
+
+  <nav class="navbar">
+
+    <div id="close-btn"><i class="fas fa-angle-left"></i>close menu</div>
+    <a href="home.html">home</a>
+    <a href="#">most popular</a>
+    <a href="#">movies</a>
+    <a href="#">subbed</a>
+    <a href="#">dubbed</a>
+    <a href="#">OVas</a>
+    <a href="#">ONas</a>
+    <a href="#">specials</a>
+    
+    <div class="title">genere</div>
+    <div class="row">
+      
+    <a href="#">action</a>
+    <a href="#">adventure</a>
+    <a href="#">comedy</a>
+    <a href="#">drama</a>
+    <a href="#">fantasy</a>
+    <a href="#">horror</a>
+    <a href="#">mystery</a>
+    <a href="#">romance</a>
+    <a href="#">sci-fi</a>
+    <a href="#">slice of life</a>
+    <a href="#">supernatural</a>
+    <a href="#">thriller</a>
+    <a href="#">war</a>
+    <a href="#">slice of life</a>
+    <a href="#">cars</a>
+    <a href="#">space</a>
+    <a href="#">sports</a>
+    <a href="#">super power</a>
+    <a href="#">vampire</a>
+    <a href="#">yaoi</a>
+    <a href="#">yuri</a>
+    <a href="#">harem</a>
+    <a href="#">supperpower</a>
+    <a href="#">sports</a>
+    <a href="#">cars</a>
+    <a href="#">space</a>
+    <a href="#">super power</a>
+    <a href="#">vampire</a>
+    <a href="#">yaoi</a>
+    <a href="#">yuri</a>
+    <a href="#">harem</a>
+    <a href="#">supperpower</a>
+    <a href="#">sports</a>
+    <a href="#">space</a>
+    <a href="#">vampire</a>
+    <a href="#">yaoi</a>
+    <a href="#">yuri</a>
+    <a href="#">harem</a>
+    <a href="#">supperpower</a>
+  
+</div>
+
+  </nav>
+
+</div>
+
+<!--filter section stars-->
+
+<section class="filter">
+   <h1 class="heading">filter</h1>
+    <form action="" >
+
+
+        <div class="list-container">
+
+         <div class="list">
+            <span>type</span>
+            <input type="text" readonly value="all" class="output">
+            <div class="items">
+                <div class="item">all</div>
+                <div class="item">movie</div>
+                <div class="item">TV</div>
+                <div class="item">OVAs</div>
+                <div class="item">ONAs</div>
+                <div class="item">specials</div>
+                <div class="item">music</div>
+            </div>
+          </div>
+
+         <div class="list">
+            <span>status</span>
+            <input type="text" readonly value="all" class="output">
+            <div class="items">
+                <div class="item">all</div>
+                <div class="item">ongoing</div>
+                <div class="item">complete</div>
+                <div class="item">upcoming</div>
+            </div>
+          </div>
+
+
+         <div class="list">
+            <span>sub</span>
+            <input type="text" readonly value="all" class="output">
+            <div class="items">
+                <div class="item">all</div>
+                <div class="item">SUB</div>
+                <div class="item">DUB</div>
+                <div class="item">RAW</div>
+            </div>
+         </div>
+
+
+
+         <div class="list">
+            <span>season</span>
+            <input type="text" readonly value="all" class="output">
+            <div class="items">
+                <div class="item">all</div>
+                <div class="item">spring</div>
+                <div class="item">summer</div>
+                <div class="item">fall</div>
+                  <div class="item">winter</div>
+            </div>
+         </div>
+
+
+        </div>
+        <div class="genere">
+         <input type="checkbox" id="c1">
+         <label for="c1">action</label>
+         <input type="checkbox" id="c2">
+         <label for="c2">adventure</label>
+         <input type="checkbox" id="c3">
+         <label for="c3">comedy</label>
+         <input type="checkbox" id="c4">
+         <label for="c4">drama</label>
+         <input type="checkbox" id="c5">
+         <label for="c5">fantasy</label>
+         <input type="checkbox" id="c6">
+         <label for="c6">horror</label>
+         <input type="checkbox" id="c7">
+         <label for="c7">mystery</label>
+         <input type="checkbox" id="c8">
+         <label for="c8">romance</label>
+         <input type="checkbox" id="c9">
+         <label for="c9">sci-fi</label>
+         <input type="checkbox" id="c10">
+         <label for="c10">slice of life</label>
+         <input type="checkbox" id="c11">
+         <label for="c11">supernatural</label>
+         <input type="checkbox" id="c12">
+         <label for="c12">thriller</label>
+         <input type="checkbox" id="c13">
+         <label for="c13">yaoi</label>
+         <input type="checkbox" id="c14">
+         <label for="c14">yuri</label>
+         <input type="checkbox" id="c15">
+         <label for="c15">harem</label>
+         <input type="checkbox" id="c16">
+         <label for="c16">supperpower</label>
+         <input type="checkbox" id="c17">
+         <label for="c17">sports</label>
+         <input type="checkbox" id="c18">
+         <label for="c18">space</label>
+         <input type="checkbox" id="c19">
+         <label for="c19">vampire</label>
+         <input type="checkbox" id="c20">
+         <label for="c20">yaoi</label>
+         <input type="checkbox" id="c21">
+         <label for="c21">yuri</label>
+         <input type="checkbox" id="c22">
+         <label for="c22">harem</label>
+         <input type="checkbox" id="c23">
+         <label for="c23">supperpower</label>
+         <input type="checkbox" id="c24">
+         <label for="c24">sports</label>
+         <input type="checkbox" id="c25">
+         <label for="c25">space</label>
+         <input type="checkbox" id="c26">
+         <label for="c26">vampire</label>
+         <input type="checkbox" id="c27">
+         <label for="c27">yaoi</label>
+         <input type="checkbox" id="c28">
+         <label for="c28">yuri</label>
+         <input type="checkbox" id="c29">
+         <label for="c29">harem</label>
+         <input type="checkbox" id="c30">
+         <label for="c30">supperpower</label>
+         <input type="checkbox" id="c31">
+         <label for="c31">sports</label>
+         <input type="checkbox" id="c32">
+         <label for="c32">space</label>
+         <input type="checkbox" id="c33">
+         <label for="c33">vampire</label>
+         <input type="checkbox" id="c34">
+         <label for="c34">yaoi</label>
+         <input type="checkbox" id="c35">
+         <label for="c35">yuri</label>
+         <input type="checkbox" id="c36">
+         <label for="c36">harem</label>
+         <input type="checkbox" id="c37">
+         <label for="c37">supperpower</label>
+         <input type="checkbox" id="c38">
+         <label for="c38">sports</label>
+         <input type="checkbox" id="c39">
+         <label for="c39">space</label>
+        
+
+        </div>
+        <input type="submit" value="filter-anime" class="btn">
+    </form> 
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--filter section ends-->
+
+<!--trending section stars-->
+
+
+<section class="trending">
+
+  <h1 class="heading">most popular</h1>
+
+  <div class="trending-slider posts-container">
+
+     <div class="swiper-wrapper">
+
+         <div class="swiper-slide post">
+            <div class="imge">
+              <img src="imges/imges2/solo leveling.jpg" alt="">
+              <p class="type">TV</p>
+              <p class="caption">SUB</p>
+            </div>
+            <h3><a href="#">solo leveling</a></h3>
+         </div>
+
+          <div class="swiper-slide post">
+            <div class="imge">
+              <img src="imges/imges2/dangers.jpg" alt="">
+              <p class="type">TV</p>
+              <p class="caption">SUB</p>
+          </div>
+            <h3><a href="#">dangers in my heart</a></h3>
+         </div>
+
+
+           <div class="swiper-slide post">
+            <div class="imge">
+              <img src="imges/imges2/chainsaw-man-2022-anime-poster.avif" alt="" >
+              <p class="type">TV</p>
+              <p class="caption">SUB</p>
+          </div>
+            <h3><a href="#">chainsaw man</a></h3>
+         </div>
+
+          <div class="swiper-slide post">
+            <div class="imge">
+              <img src="imges/imges2/OIP.jpg" alt="" > 
+              <p class="type">TV</p>
+              <p class="caption">SUB</p>
+          </div>
+            <h3><a href="#">bleach</a></h3>
+         </div>
+
+ 
+          <div class="swiper-slide post">
+            <div class="imge">
+              <img src="imges/imges2/Egghead_Arc.jpg" alt="" >
+              <p class="type">TV</p>
+              <p class="caption">SUB</p>
+          </div>
+            <h3><a href="#">one peice</a></h3>
+         </div>
+
+           <div class="swiper-slide post">
+            <div class="imge">
+              <img src="imges/imges2/naruto-shippuden-tv-series-poster.avif" alt="">
+              <p class="type">TV</p>
+              <p class="caption">SUB</p>
+            </div>
+            <h3><a href="#">naruto</a></h3>
+         </div>
+
+     </div>
+
+  </div>
+     
+</section>
+
+
+<!--trending section ends-->
+
+
+
+
+
+<!--footer section stars--> 
+ <footer class="footer">
+
+  <section >
+
+    <div class="list">
+      <h3>A-Z</h3>
+      <P>searching order by alphabet name A to Z</P>
+      <div class="list-links">
+
+        <a href="#">0-9</a>
+        <a href="#">A</a>
+        <a href="#">B</a>
+        <a href="#">C</a>
+        <a href="#">D</a>
+        <a href="#">E</a>
+        <a href="#">F</a>
+        <a href="#">G</a>
+        <a href="#">H</a>
+        <a href="#">I</a>
+        <a href="#">J</a>
+        <a href="#">K</a>
+        <a href="#">L</a>
+        <a href="#">M</a>
+        <a href="#">N</a>
+        <a href="#">O</a>
+        <a href="#">P</a>
+        <a href="#">Q</a>
+        <a href="#">R</a>
+        <a href="#">S</a>
+        <a href="#">T</a>
+        <a href="#">U</a>
+        <a href="#">V</a>
+        <a href="#">W</a>
+        <a href="#">X</a>
+        <a href="#">Y</a>
+        <a href="#">Z</a>
+
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="extra-links">
+        <a href="#">terms of use</a>
+        <a href="#">our policy</a>
+        <a href="#"> feedback</a>
+        <a href="#">contact us</a>
+      </div>
+
+      <div class="share">
+
+       <a href="#" class="fab fa-youtube"></a>  <!--لاحظ الفرق بين fas , fab-->
+       <a href="#" class="fab fa-whatsapp"></a>
+       <a href="#" class="fab fa-linkedin"></a>
+       <a href="#" class="fab fa-instagram"></a>
+
+      </div>
+
+    </div>
+
+      <div class="credit">
+        copyright &copy; 2025 by <span>mohamedabdella777</span> | all rights reserved!
+      </div>
+
+
+  </section>
+
+
+ </footer>
+
+    <!--footer section ends-->
+
+
+    <!--swiper js cdn link-->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--custom js file link-->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--نقلت ملف الhome 
+في ملف filter
+ ولكن مسحت منه hero section and latest section 
+ وابقيت علي trending section-->

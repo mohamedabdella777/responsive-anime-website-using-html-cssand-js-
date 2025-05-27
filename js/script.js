@@ -71,8 +71,19 @@ window.onclick = (e) => {
 
 
     });
+    
 
 
-
-
+    /*filter*/
+   
  
+
+    let list_items = document.querySelectorAll('.item');
+
+    list_items.forEach(item => {
+    item.onclick = () => {
+    let list = item.parentElement.parentElement; // ← البيت
+    let output = list.querySelector('.output');  // ← الصندوق
+    output.value = item.innerHTML;               // ← حط فيه اللي اخترته
+  };
+});
