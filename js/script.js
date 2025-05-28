@@ -87,3 +87,17 @@ window.onclick = (e) => {
     output.value = item.innerHTML;               // ← حط فيه اللي اخترته
   };
 });
+
+//solving maxLength attripute notworking for input in htnl
+
+
+   let inputs = document.querySelectorAll ('input');// let inputs = document.querySelectorAll ('input[type="number"]');لو عايز تختار نوع زي محدد
+
+
+   inputs.forEach(input =>{
+    input.oninput =() =>{
+      if(input.value > input.maxLength)
+        input.value= input.value.slice(0,input.maxLength);
+    }
+
+   });
